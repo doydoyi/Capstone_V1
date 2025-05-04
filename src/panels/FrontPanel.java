@@ -1,4 +1,4 @@
-package PanelsAndViews;
+package panels;
 
 import javax.swing.*;
 
