@@ -7,7 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JapaneseToEnglishWordRepo {
-    private final String File_path = "D:\\Capstone_V1\\src\\main\\resources\\data\\JapToEngDictionary.txt";
+    private String File_path;
+
+    public JapaneseToEnglishWordRepo(String File_path) {
+        this.File_path = File_path;
+    }
 
     //Load external Dictionary
     List<JapaneseWords> loadWords(){
