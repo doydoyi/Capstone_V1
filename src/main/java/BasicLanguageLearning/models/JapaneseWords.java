@@ -1,4 +1,4 @@
-package models;
+package main.java.BasicLanguageLearning.models;
 
 public class JapaneseWords {
     private String japaneseWord;

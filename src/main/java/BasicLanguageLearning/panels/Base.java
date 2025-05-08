@@ -1,9 +1,9 @@
-package panels;
+package main.java.BasicLanguageLearning.panels;
 
 import javax.swing.*;
 
 public abstract class Base {
-    abstract JPanel getPanel();
+    public abstract JPanel getPanel();
 
 
     //Method to be used in multiple panels for easy navigation.

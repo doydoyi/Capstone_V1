@@ -1,14 +1,13 @@
-package models;
+package main.java.BasicLanguageLearning.models;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class JapaneseToEnglishWordRepo {
-    private final String File_path = "\"D:\\Capstone_V1\\src\\JapToEngDictionary.txt\"";
+    private final String File_path = "D:\\Capstone_V1\\src\\main\\resources\\data\\JapToEngDictionary.txt";
 
     //Load external Dictionary
     List<JapaneseWords> loadWords(){
@@ -22,7 +21,7 @@ public class JapaneseToEnglishWordRepo {
                 }
             }
         } catch(IOException e) {
-            System.out.println("Japanese to English Dictionary not found.");
+            System.out.println("Japanese to English Dictionary not found." + e.getMessage());
         }
 
         return wordlist;
