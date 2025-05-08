@@ -14,24 +14,14 @@ public class menuPanel extends Base{
         super(controller);
     }
 
+    @Override
+    protected void initComponents() {}
+
 
     @Override
     public JPanel getPanel() {
         return mainPanel;
     }
 
-    @Override
-    void initComponents() {
-        phrasesButton = new JButton("Phrases");
-        wordsButton = new JButton("Words");
-        addWordButton = new JButton("Add a word");
 
-
-        phrasesButton.addActionListener(e -> controller.navigate("PHRASE_PANEL"));
-        wordsButton.addActionListener(e -> controller.navigate("ADD_WORD_PANEL"));
-
-        mainPanel.add(phrasesButton);
-        mainPanel.add(wordsButton);
-        mainPanel.add(addWordButton);
-    }
 }

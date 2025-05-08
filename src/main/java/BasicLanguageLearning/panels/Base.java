@@ -11,7 +11,6 @@ public abstract class Base {
 
     Base(ApplicationControls controller){
         this.controller = controller;
-        initComponents();
     }
 
 
@@ -21,5 +20,5 @@ public abstract class Base {
         bttn.addActionListener(event -> controller.navigate(menuPanel));
         return bttn;
     }
-    abstract void initComponents();
+    protected abstract void initComponents();
 }
