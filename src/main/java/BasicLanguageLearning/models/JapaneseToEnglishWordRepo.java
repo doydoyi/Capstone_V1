@@ -26,4 +26,8 @@ public class JapaneseToEnglishWordRepo {
 
         return wordlist;
     };
+
+    public void saveWord(JapaneseWords japaneseWords) {
+
+    }
 }
