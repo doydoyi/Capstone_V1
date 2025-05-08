@@ -3,7 +3,7 @@ package main.java.BasicLanguageLearning.controls;
 import main.java.BasicLanguageLearning.models.JapaneseToEnglishWordRepo;
 import main.java.BasicLanguageLearning.models.JapaneseWords;
 import main.java.BasicLanguageLearning.panels.frontPanel;
-import main.java.BasicLanguageLearning.panels.mainPanel;
+import main.java.BasicLanguageLearning.panels.menuPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,7 +14,7 @@ public class ApplicationControls {
     private JPanel MainContainer;
     private final JapaneseToEnglishWordRepo wRepository;
     private frontPanel welcomePanel;
-    private mainPanel menuPanel;
+    private menuPanel menu;
     public static final String fPanel = "Front...";
     public static final String mPanel = "Menu...";
 
@@ -35,8 +35,8 @@ public class ApplicationControls {
         card_Layout = new CardLayout();
         MainContainer = new JPanel(card_Layout);
         frame.setContentPane(MainContainer);
-        MainContainer.add(new FrontPanel(this).getPanel(), fPanel);
-        MainContainer.add(new MenuPanel(this).getPanel(), mPanel);
+        MainContainer.add(new frontPanel(this).getPanel(), fPanel);
+        MainContainer.add(new menuPanel(this).getPanel(), mPanel);
     }
     public void navigate(String panelName){
         card_Layout.show(MainContainer, panelName);
