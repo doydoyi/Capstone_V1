@@ -29,3 +29,6 @@ the invokeLater method according to online forums and documentation ensures that
 
 TL:DR (too long didn't read) / ELI5 (Explain like i'm five):
   EDT is a single/one-way road, invokeLater function is the traffic officer that monitors who goes first and who goes next so that cars don't crash.
+
+# Class Diagram
+![alt text](src/main/java/BasicLanguageLearning/classDiagram.png?raw=true)
