@@ -2,6 +2,8 @@
 **About** This project utilizes the Java programming language with it's core OOP Principles, as well as making use of File handling, Exception handling, and Graphical User Interface (GUI)
 The GUI makes you add words into a .txt file that is located in your local directory that it will be saved at and display them for the user to review the words.
 
+(**In the main.java, kindly change parameter to the directory of JapToEngDictionary.txt in the "repo" object. THank you**)
+
 ## Note:
 AI was utilized upon the making of this project. As well as logic from previous projects and repositories for reference. External sources were used as well, specifically StackOverFlow, GeekforGeeks, and Oracle Java documentation.
 Also, please refer to **commit history** for some specific steps that were documented while making the project.
