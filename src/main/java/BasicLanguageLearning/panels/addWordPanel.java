@@ -1,7 +1,11 @@
 package main.java.BasicLanguageLearning.panels;
 import main.java.BasicLanguageLearning.controls.ApplicationControls;
+
+import javax.imageio.stream.ImageInputStreamImpl;
+import javax.print.attribute.standard.JobPriority;
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 public class addWordPanel extends Base{
 
@@ -12,11 +16,43 @@ public class addWordPanel extends Base{
     private JPanel mainPanel;
     private JLabel lbJapanese;
     private JLabel lbEnglish;
-//    private boolean isSuccess;
+    String japanese, english;
+    private boolean isSuccessful;
 
     public addWordPanel(ApplicationControls controller){
         super(controller);
-//        initComponents();
+        btnBack.addActionListener(e -> controller.navigate(ApplicationControls.MENU_PANEL_TEXT));
+        actions();
+    }
+
+    private void actions() {
+        btnSave.addActionListener(e -> {
+            japanese = fJapanese.getText().trim();
+            english = fEnglish.getText().trim();
+
+            if(japanese.isEmpty() || english.isEmpty()){
+                JOptionPane.showMessageDialog(
+                        mainPanel,
+                        "Both fields must be filled!",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE
+                );
+                return;
+            }
+            try {
+                isSuccessful = controller.saveWord(japanese, english);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+            if(isSuccessful){
+                JOptionPane.showMessageDialog(mainPanel, "Saved!", "Successful", JOptionPane.INFORMATION_MESSAGE
+                );
+                fJapanese.setText("");
+                fEnglish.setText("");
+            } else {
+                JOptionPane.showMessageDialog(mainPanel, "Failed to save.", "Unable to save.", JOptionPane.ERROR_MESSAGE);
+            }
+        });
     }
 
     @Override
@@ -31,9 +67,4 @@ public class addWordPanel extends Base{
         fJapanese.setText("");
         fEnglish.setText("");
     }
-
-//    private void createUIComponents() {
-//        // TODO: place custom component creation code here
-//        new addWordPanel(controller);
-//    }
 }

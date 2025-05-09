@@ -5,9 +5,11 @@ import main.java.BasicLanguageLearning.models.JapaneseWords;
 import main.java.BasicLanguageLearning.panels.frontPanel;
 import main.java.BasicLanguageLearning.panels.menuPanel;
 import main.java.BasicLanguageLearning.panels.addWordPanel;
+import main.java.BasicLanguageLearning.panels.wordPanel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 public class ApplicationControls {
     public static final String FRONT_PANEL_TEXT = "FRONT";
@@ -37,14 +39,17 @@ public class ApplicationControls {
         frontPanel pFront = new frontPanel(this);
         menuPanel pMenu = new menuPanel(this);
         addWordPanel pAddWord = new addWordPanel(this);
+        wordPanel pWord = new wordPanel(this);
         System.out.println("Is Front panel null?: " + (pFront.getPanel() == null));
         System.out.println("Is Menu panel null?: " + (pMenu.getPanel() == null));
         System.out.println("Is Add Word panel null?: " + (pAddWord.getPanel() == null));
+        System.out.println("Is Word panel null?: " +(pWord.getPanel() == null));
 
         if(pFront.getPanel() != null && pMenu.getPanel() != null){
             mainContainer.add(pFront.getPanel(), FRONT_PANEL_TEXT);
             mainContainer.add(pMenu.getPanel(), MENU_PANEL_TEXT);
             mainContainer.add(pAddWord.getPanel(), ADD_WORD_PANEL_TEXT);
+            mainContainer.add(pWord.getPanel(), WORD_PANEL_TEXT);
             System.out.println("Panels are now initialized");
             frame.pack();
             frame.setVisible(true);
@@ -56,16 +61,18 @@ public class ApplicationControls {
                     + "2. Custom creation code."
             );
         }
-
-
     }
 
     public void navigate(String panelName){
         cardLayout.show(mainContainer, panelName);
     }
 
-    public boolean saveWord(String japanese, String english){
-        wRepository.saveWord(new JapaneseWords(japanese, english));
-        return true;
+    public boolean saveWord(String japanese, String english) throws IOException {
+        JapaneseWords newWord = new JapaneseWords(japanese, english);
+        return wRepository.saveWord(newWord);
+    }
+
+    public JapaneseToEnglishWordRepo getWordRepo(){
+        return this.wRepository;
     }
 }

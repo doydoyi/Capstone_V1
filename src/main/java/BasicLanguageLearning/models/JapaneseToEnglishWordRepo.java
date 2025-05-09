@@ -1,8 +1,8 @@
 package main.java.BasicLanguageLearning.models;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import javax.swing.*;
+import java.io.*;
+import java.nio.Buffer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +31,15 @@ public class JapaneseToEnglishWordRepo {
         return wordlist;
     };
 
-    public void saveWord(JapaneseWords japaneseWords) {
-
+    public boolean saveWord(JapaneseWords japaneseWords) throws IOException {
+        try (FileWriter fWriter = new FileWriter(File_path, true);
+             BufferedWriter bWriter = new BufferedWriter(fWriter)){
+            bWriter.write(japaneseWords.getJapaneseWord() + japaneseWords.getEnglishTranslation());
+            bWriter.newLine();
+            return true;
+        } catch (IOException e) {
+            System.out.println("Error saving word.");
+            return false;
+        }
     }
 }
