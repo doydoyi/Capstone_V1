@@ -33,8 +33,8 @@ public class ApplicationControls {
     private void initPanels(){
         frontPanel pFront = new frontPanel(this);
         menuPanel pMenu = new menuPanel(this);
-        System.out.println("Front panel null?: " + (pFront.getPanel() == null));
-        System.out.println("Front panel null?: " + (pMenu.getPanel() == null));
+        System.out.println("Is Front panel null?: " + (pFront.getPanel() == null));
+        System.out.println("Is Menu panel null?: " + (pMenu.getPanel() == null));
 
         if(pFront.getPanel() != null && pMenu.getPanel() != null){
             mainContainer.add(pFront.getPanel(), FRONT_PANEL_TEXT);
@@ -43,6 +43,11 @@ public class ApplicationControls {
             frame.setVisible(true);
         } else {
             System.out.println("Failed initialization of panels");
+            JOptionPane.showMessageDialog(null,
+                    "Panel initialization failed. Check: \n"
+                    + "1. Form file component binds.\n"
+                    + "2. Custom creation code."
+            );
         }
 
 

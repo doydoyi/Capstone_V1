@@ -6,9 +6,9 @@ import javax.swing.*;
 
 public class menuPanel extends Base{
     private JPanel mainPanel;
-    private JButton phrasesButton;
     private JButton wordsButton;
     private JButton addWordButton;
+    private JButton backButton;
 
     public menuPanel(ApplicationControls controller) {
         super(controller);
@@ -17,11 +17,9 @@ public class menuPanel extends Base{
     @Override
     protected void initComponents() {}
 
-
     @Override
     public JPanel getPanel() {
         return mainPanel;
     }
-
 
 }

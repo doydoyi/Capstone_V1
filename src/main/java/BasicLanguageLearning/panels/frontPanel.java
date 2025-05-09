@@ -21,4 +21,5 @@ public class frontPanel extends Base{
 
     @Override
     protected void initComponents() {}
+
 }
