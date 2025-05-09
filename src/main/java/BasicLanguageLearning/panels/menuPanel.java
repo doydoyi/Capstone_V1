@@ -12,7 +12,7 @@ public class menuPanel extends Base{
 
     public menuPanel(ApplicationControls controller) {
         super(controller);
-//        wordsButton.addActionListener(e -> controller.navigate(ApplicationControls.));
+        wordsButton.addActionListener(e -> controller.navigate(ApplicationControls.WORD_PANEL_TEXT));
         addWordButton.addActionListener(e -> controller.navigate(ApplicationControls.ADD_WORD_PANEL_TEXT));
         backButton.addActionListener(e -> controller.navigate(ApplicationControls.FRONT_PANEL_TEXT));
     }

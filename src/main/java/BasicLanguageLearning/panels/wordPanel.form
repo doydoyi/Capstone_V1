@@ -20,7 +20,7 @@
       <component id="132b8" class="javax.swing.JButton" binding="backButton">
         <constraints border-constraint="West"/>
         <properties>
-          <text value="Button"/>
+          <text value="Back"/>
         </properties>
       </component>
     </children>

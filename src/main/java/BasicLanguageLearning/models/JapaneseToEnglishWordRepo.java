@@ -14,7 +14,7 @@ public class JapaneseToEnglishWordRepo {
     }
 
     //Load external Dictionary
-    List<JapaneseWords> loadWords(){
+    public List<JapaneseWords> loadWords(){
         List<JapaneseWords> wordlist = new ArrayList<>();
         try (BufferedReader bReader = new BufferedReader(new FileReader(File_path))) {
             String s;
