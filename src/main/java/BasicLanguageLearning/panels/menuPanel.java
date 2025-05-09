@@ -16,10 +16,6 @@ public class menuPanel extends Base{
         addWordButton.addActionListener(e -> controller.navigate(ApplicationControls.ADD_WORD_PANEL_TEXT));
         backButton.addActionListener(e -> controller.navigate(ApplicationControls.FRONT_PANEL_TEXT));
     }
-
-    @Override
-    protected void initComponents() {}
-
     @Override
     public JPanel getPanel() {
         return mainPanel;

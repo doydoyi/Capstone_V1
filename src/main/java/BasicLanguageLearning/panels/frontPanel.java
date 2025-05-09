@@ -18,8 +18,4 @@ public class frontPanel extends Base{
     public JPanel getPanel(){
         return mainPanel;
     }
-
-    @Override
-    protected void initComponents() {}
-
 }

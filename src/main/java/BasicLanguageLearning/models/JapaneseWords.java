@@ -15,8 +15,4 @@ public class JapaneseWords {
     public String getEnglishTranslation(){
         return englishTranslation;
     }
-
-    public String toString(){
-        return "The english for " + getJapaneseWord() + " is " + getEnglishTranslation();
-    }
 }

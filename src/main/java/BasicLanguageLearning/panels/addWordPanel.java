@@ -54,10 +54,7 @@ public class addWordPanel extends Base{
             }
         });
     }
-
-    @Override
-    protected void initComponents() {}
-
+    
     @Override
     public JPanel getPanel() {
         return mainPanel;

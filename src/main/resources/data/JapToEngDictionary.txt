@@ -1,5 +1,0 @@
-nani : what
-konichiwa : hello
-ew : we
-q : q
-1 : 1

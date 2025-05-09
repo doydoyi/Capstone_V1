@@ -38,7 +38,4 @@ public class wordPanel extends Base{
         listSetup();
         return mainPanel;
     }
-
-    @Override
-    protected void initComponents() {}
 }

@@ -20,5 +20,4 @@ public abstract class Base {
         bttn.addActionListener(event -> controller.navigate(menuPanel));
         return bttn;
     }
-    protected abstract void initComponents();
 }
