@@ -13,7 +13,7 @@
           <text value="Start"/>
         </properties>
       </component>
-      <component id="11f13" class="javax.swing.JLabel" binding="title">
+      <component id="11f13" class="javax.swing.JLabel" binding="titleLabel">
         <constraints border-constraint="North"/>
         <properties>
           <text value="Learn Basic Japanese"/>

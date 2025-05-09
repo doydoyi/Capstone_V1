@@ -9,14 +9,13 @@ import javax.swing.*;
 import java.awt.*;
 
 public class ApplicationControls {
+    public static final String FRONT_PANEL_TEXT = "FRONT";
+    public static final String MENU_PANEL_TEXT = "MENU";
     private JFrame frame;
-    private CardLayout card_Layout;
-    private JPanel MainContainer;
+    private CardLayout cardLayout;
+    private JPanel mainContainer;
     private final JapaneseToEnglishWordRepo wRepository;
-    private frontPanel welcomePanel;
-    private menuPanel menu;
-    public static final String fPanel = "Front...";
-    public static final String mPanel = "Menu...";
+
 
     public ApplicationControls(JapaneseToEnglishWordRepo wRepository){
         this.wRepository = wRepository;
@@ -26,25 +25,35 @@ public class ApplicationControls {
     private void initFrame(){
         frame = new JFrame("Basic Japanese Language Learning.");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        card_Layout = new CardLayout();
-        MainContainer = new JPanel(card_Layout); //JPanel main container to manage cardlayout for java swing.
-        frame.setContentPane(MainContainer);
+        cardLayout = new CardLayout();
+        mainContainer = new JPanel(cardLayout); //JPanel main container to manage cardlayout for java swing.
+        frame.setContentPane(mainContainer);
     }
 
     private void initPanels(){
-        card_Layout = new CardLayout();
-        MainContainer = new JPanel(card_Layout);
-        frame.setContentPane(MainContainer);
-        MainContainer.add(new frontPanel(this).getPanel(), fPanel);
-        MainContainer.add(new menuPanel(this).getPanel(), mPanel);
+        frontPanel pFront = new frontPanel(this);
+        menuPanel pMenu = new menuPanel(this);
+        System.out.println("Front panel null?: " + (pFront.getPanel() == null));
+        System.out.println("Front panel null?: " + (pMenu.getPanel() == null));
+
+        if(pFront.getPanel() != null && pMenu.getPanel() != null){
+            mainContainer.add(pFront.getPanel(), FRONT_PANEL_TEXT);
+            mainContainer.add(pMenu.getPanel(), MENU_PANEL_TEXT);
+            frame.pack();
+            frame.setVisible(true);
+        } else {
+            System.out.println("Failed initialization of panels");
+        }
+
+
     }
+
     public void navigate(String panelName){
-        card_Layout.show(MainContainer, panelName);
+        cardLayout.show(mainContainer, panelName);
     }
 
     public boolean saveWord(String japanese, String english){
         wRepository.saveWord(new JapaneseWords(japanese, english));
         return true;
     }
-
 }

@@ -20,8 +20,11 @@ public class addWordPanel extends Base{
     }
 
     @Override
+    protected void initComponents() {}
+
+    @Override
     public JPanel getPanel() {
-        return null;
+        return mainPanel;
     }
 
 //    @Override
@@ -77,5 +80,10 @@ public class addWordPanel extends Base{
     private void clrField(){
         fJapanese.setText("");
         fEnglish.setText("");
+    }
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
+        new addWordPanel(controller);
     }
 }

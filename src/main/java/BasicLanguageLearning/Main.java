@@ -10,6 +10,8 @@ public class Main {
         SwingUtilities.invokeLater(() -> {
             JapaneseToEnglishWordRepo repo = new JapaneseToEnglishWordRepo("D:\\Capstone_V1\\src\\main\\resources\\data\\JapToEngDictionary.txt");
             ApplicationControls controls = new ApplicationControls(repo);
+
+//            controls.navigate(ApplicationControls.FRONT_PANEL_TEXT);
         });
     }
 }
