@@ -16,6 +16,9 @@ public class wordPanel extends Base{
     public wordPanel(ApplicationControls controller) {
         super(controller);
         backButton.addActionListener(e -> controller.navigate(ApplicationControls.MENU_PANEL_TEXT));
+        listSetup();
+        mainPanel.revalidate();
+        mainPanel.repaint();
     }
 
     private void listSetup(){
@@ -32,6 +35,7 @@ public class wordPanel extends Base{
 
     @Override
     public JPanel getPanel() {
+        listSetup();
         return mainPanel;
     }
 

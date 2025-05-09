@@ -39,17 +39,17 @@ public class addWordPanel extends Base{
                 );
                 return;
             }
+
             try {
                 isSuccessful = controller.saveWord(japanese, english);
+                if(isSuccessful){
+                    JOptionPane.showMessageDialog(mainPanel, "Saved!", "Successful", JOptionPane.INFORMATION_MESSAGE
+                    );
+                    fJapanese.setText("");
+                    fEnglish.setText("");
+                    controller.navigate(ApplicationControls.WORD_PANEL_TEXT);
+                }
             } catch (IOException ex) {
-                throw new RuntimeException(ex);
-            }
-            if(isSuccessful){
-                JOptionPane.showMessageDialog(mainPanel, "Saved!", "Successful", JOptionPane.INFORMATION_MESSAGE
-                );
-                fJapanese.setText("");
-                fEnglish.setText("");
-            } else {
                 JOptionPane.showMessageDialog(mainPanel, "Failed to save.", "Unable to save.", JOptionPane.ERROR_MESSAGE);
             }
         });

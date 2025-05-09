@@ -34,7 +34,7 @@ public class JapaneseToEnglishWordRepo {
     public boolean saveWord(JapaneseWords japaneseWords) throws IOException {
         try (FileWriter fWriter = new FileWriter(File_path, true);
              BufferedWriter bWriter = new BufferedWriter(fWriter)){
-            bWriter.write(japaneseWords.getJapaneseWord() + japaneseWords.getEnglishTranslation());
+            bWriter.write(japaneseWords.getJapaneseWord() + " : " + japaneseWords.getEnglishTranslation());
             bWriter.newLine();
             return true;
         } catch (IOException e) {
